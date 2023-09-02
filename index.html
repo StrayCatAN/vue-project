@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>新春击鼓传福</title>
+		<meta charset="utf-8">
+		<meta name="viewport"
+			content="width=device-width,target-densitydpi=device-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="email=no" />
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />
+		<script src="./js/base/base.js"></script>
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+		<script src="./js/base/jquery.js"></script>
+		<script src="./js/anime.min.js"></script>
+		<script src="./js/base/share.js?v=1"></script>
+		<!-- <script
+        src="https://jic.talkingdata.com/app/h5/v1?appid=A581CDB151FF4F5A9B33406F3E20028D&vn=jd618&vc=1.0.1"></script> -->
+		<script>
+			ibase.init({ dir: 'portrait', lock: true });
+			ibase.load('css/index.css'); //无缓存加载文件
+		</script>
+	</head>
+
+	<body>
+		<!--------------------------------------------------------------html区域-------------------------------------------------------------------------------------------->
+		<article style="opacity: 0;">
+			<a  class="btn  bgmBtn bgmPlay "></a>
+			
+			<!-- <section class="index opacity0 ">
+				<div class="ele dl1"></div>
+				<div class="ele dl2"></div>
+				<div class="contv">
+					<div class="logo"></div>
+					<div class="tit1"></div>
+					<div class="tit2"></div>
+					<div class="eles">
+						<div class="ele cloud cloud1"></div>
+						<div class="ele cloud cloud2"></div>
+						<div class="ele cloud cloud3"></div>
+						<div class="ele ele2"></div>
+						<div class="ele ele1"></div>
+						<div class="ele ico1"></div>
+						<div class="ele ico2"></div>
+						<div class="ele fire fire1"></div>
+						<div class="ele fire fire2"></div>
+						<div class="coins">
+							<div class="coin coin1"></div>
+							<div class="coin coin2"></div>
+							<div class="coin coin3"></div>
+							<div class="coin coin4"></div>
+							<div class="coin coin5"></div>
+							<div class="coin coin6"></div>
+						</div>
+						
+					</div>
+					<div class="btns">
+						<a class="btn btnStart"></a>
+						<a class="btn btnRule"></a>
+					</div>
+				</div>
+			</section> -->
+			
+			<section class="game  opacity0  ">
+				<div class="timeBox"><span class="num">30</span>s</div>
+				<!-- 鼓 -->
+				<div class="gameDrumBox ">
+					<div class="area"></div>
+					<div class="gameDrum posa"></div>
+					<!-- 轨道 -->
+					<div class="gamePost gamePost1">
+						<span class="posa line"></span>
+						<span class="posa gameIn"></span>
+					</div>
+					<div class="gamePost gamePost2">
+						<span class="posa line"></span>
+						<span class="posa gameIn"></span>
+					</div>
+					<div class="gameStick gameStickLeft"></div>
+				 <div class="gameStick gameStickRight"></div>
+				</div>
+
+				<!-- 元素 -->
+				<div class="eleBox"></div>
+				<!-- 文字 -->
+				<div class="pointTextBox">
+					<div class="pointText "></div>
+				</div>
+				<!-- 点击 -->
+				<div class="clickBtn clickLeft"></div>
+				<div class="clickBtn clickRight"></div>
+				
+				<!-- 倒计时 -->
+				<aside class="time2">
+					<div class="tips"></div>
+					<div class="contv timetxt ">
+						<div class="timebg2">
+							<div class="stars">
+								<span class="star"><i ></i></span>
+								<span class="star"><i ></i></span>
+								<span class="star"><i ></i></span>
+								<span class="star"><i ></i></span>
+							</div>
+							<div class="txt"><i></i></div>
+							<div class="left1"></div>
+							<div class="right1"></div>
+						</div>
+					</div>
+				</aside>
+			
+			</section>
+		
+			<!-- <section class="prize opacity0  ">
+				<div class="contv">
+					<div class="tit"></div>
+					<div class="ele fire fire1"></div>
+					<div class="ele fire fire2"></div>
+					<div class="bg">
+						<div class="ele hb hb1"></div>
+						<div class="ele hb hb2"></div>
+						<div class="ico ico1"></div>
+						<div class="ico ico2"></div>
+						<div class="ico ico3"></div>
+						<div class="ico ico4"></div>
+						<div class="ico ico5"></div>
+						<div class="ico ico6"></div>
+					</div>
+					<div class="bord">
+						<div class="bordbg2"></div>
+						<div class="deng"></div>
+						<div class="bordbg1">
+							<div class="item item1 " data-id="1">
+								<img src="./images/prize/prizeP2.png" class="prizeP2"><span class="name">谢谢参与</span>
+							</div>
+							<div class="item item2 " data-id="2">
+								<img src="./images/prize/prizeP1.png" class="prizeP1"><span class="name">2.68元</span>
+							</div>
+							<div class="item item3 " data-id="3">
+								<img src="./images/prize/prizeP1.png" class="prizeP1"><span class="name">5.88元</span>
+							</div>
+							<div class="item item4 " data-id="4">
+								<img src="./images/prize/prizeP1.png" class="prizeP1"><span class="name">1.68元</span>
+							</div>
+							<div class="item item5 " data-id="5">
+								<img src="./images/prize/prizeP2.png" class="prizeP2"><span class="name">谢谢参与</span>
+							</div>
+							<div class="item item6 " data-id="6">
+								<img src="./images/prize/prizeP1.png" class="prizeP1"><span class="name">8.88元</span>
+							</div>
+							<div class="item item7 " data-id="7">
+								<img src="./images/prize/prizeP1.png" class="prizeP1"><span class="name">16.88元</span>
+							</div>
+							<div class="item item8 " data-id="8">
+								<img src="./images/prize/prizeP1.png" class="prizeP1"><span class="name">1.68元</span>
+							</div>
+							<a  class="btnLottery"></a>
+						</div>
+						
+					</div>
+					
+					<div class="tipsBox">
+						<div class="tips">
+							<div class="swipertips">
+								<div class="swiper-wrapper">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="btns">
+						<a  class="btn btnMyPrize"></a>
+						<a  class="btn btnMore"></a>
+					</div>
+				</div> -->
+				<!-- 遮挡 点击抽奖后不让点击屏幕 -->
+				<!-- <div class="mask posa hide"></div>
+			</section> -->
+			
+			<!-- 结束 -->
+			<section class="end opacity0 ">
+				<div class="ele dl1"></div>
+				<div class="ele dl2"></div>
+				<div class="contv">
+					<div class="txt txt1"></div>
+					<div class="txt txt2"></div>
+					<div class="ele fire fire1"></div>
+					<div class="ele fire fire2"></div>
+					<div class="posa	eles">
+						<div class="ele bg"></div>
+						<div class="ele cloud1"></div>
+						<div class="ele cloud2"></div>
+						<div class="ele cloud3"></div>
+						<div class="ele ele1"></div>
+						<div class="ico ico1"></div>
+						<div class="ico ico2"></div>
+						<div class="ico ico3"></div>
+						<div class="ico ico4"></div>
+						<div class="ico ico5"></div>
+						<div class="ico ico6"></div>
+						<div class="ele yb2"></div>
+						<div class="ele yb1"></div>
+						<div class="ele yb3"></div>
+					</div>
+					<a  class="ele btn btnRe2"></a>
+				</div>
+			</section>
+		
+			<section class="loading opacity0 opacity1">
+				<div class="contv">
+					<div class="eleBox">
+						<div class="ele cloud1"></div>
+						<div class="ele cloud2"></div>
+						<div class="ele loadingEle2"></div>
+						<div class="ele loadingEle1"></div>
+						<div class="ele star star1"></div>
+						<div class="ele star star2"></div>
+						<div class="ele star star3"></div>
+						<div class="ele star star4"></div>
+					</div>
+					<div class="proline">
+						<div class="pro" ></div>
+					</div>
+					<div class="num"><i>0%</i>......</div>
+				</div>
+			</section>
+		
+			<!-- rule suc fail   prizeList result_suc result_fail-->
+			<aside class="modal  opacity0 ">
+				<div class="contv">
+					<!-- <div class="eles eles1"> -->
+						<!-- <div class="ele  light"></div>
+						<div class="ele  ele1"></div>
+						<div class="ele  ico ico6"></div>
+						<div class="ele  ele2"></div>
+						<div class="ele  ele3"></div> -->
+						<!-- <div class="ele  bg"></div> -->
+						<!-- <div class="ele  ico ico1"></div>
+						<div class="ele  ico ico2"></div>
+						<div class="ele  ico ico3"></div>
+						<div class="ele  ico ico4"></div>
+						<div class="ele  ico ico5"></div> -->
+					<!-- </div> -->
+					
+					<!-- <div class="eles2"> -->
+						<!-- <div class="ele ele4">
+							<div class="tear tear1"><i></i>	</div>
+							<div class="tear tear2"><i></i>	</div>
+						</div> -->
+						<div class="ele bg"></div>
+					<!-- </div> -->
+					
+					<div class="txtBox">
+						<!-- 中奖结果 -->
+						<div class="cont cont1">
+							<!-- <div class="tit tit1"></div>
+							<div class="tit tit2"></div> -->
+							<div class="txts">
+								您总共击鼓<span class="totleNum">0</span>次 <br>
+								成功合奏<span class="sucNum">0</span>次<br>
+								<!-- 整体达标率<span class="reachNum">0</span>%<br><br> -->
+								<!-- <div class="txt txt1">恭喜您完成任务<br> <span class="t1">赠送您一次抽奖机会！</span></div> -->
+								<!-- <div class="txt txt2">很遗憾<br>未能完成任务</div> -->
+							</div>
+							<div class="btns">
+								<a  class="btn btnReplay">再来一次</a>
+								<a  class="btn btnPrize">去抽奖</a>
+							</div>
+						</div>
+						
+						<!-- 活动规则 -->
+						<!-- <div class="cont cont2">
+							<div class="tit tit2"></div>
+							<div class="txts"></div>
+						</div> -->
+						<!-- 中奖结果成功 -->
+						<!-- <div class="cont cont3">
+							<div class="tit tit3"></div>
+							<div class="txts"><span class="num">8.88</span>元 <br>现金红包</div>
+							<p class="tips">注：中奖红包将通过公众号消息的形式进行发放，<br>过期将不在重新补发</p>
+						</div> -->
+						
+						<!-- 中奖结果失败 -->
+						<!-- <div class="cont cont4">
+							<div class="tit tit4"></div>
+							<div class="txts">离中奖就差一点点啦~ <br>再接再厉哦！</div>
+							<a  class="btn btnRe2"></a>
+						</div> -->
+						
+						
+						<!-- 中奖纪录 -->
+						<!-- <div class="cont cont5">
+							<div class="tit tit5"></div>
+							<div class="item">
+								<div class="lab">奖品</div>
+								<div class="val">中奖时间</div>
+							</div>
+							<div class="item myitem">
+								
+							</div>
+							<div class="item"></div>
+							<p class="tips">注：中奖红包将通过公众号消息的形式进行发放，<br>过期将不在重新补发</p>
+						</div> -->
+						
+						
+					</div>
+					
+					
+					
+					
+					<a  class="close"></a>
+				</div>
+			</aside>
+		
+		
+			<div class="toastBox opacity0 ">
+				<div class="cont"></div>
+			</div>
+		
+		</article>
+		<!--------------------------------------------------------------javascript区域-------------------------------------------------------------------------------------->
+		<script src="./js/base/framwork.js"></script>
+		<script src="./js/base/monitor.js"></script>
+		<script src="./js/base/swiper.min.js"></script>
+		<script src="./js/howler.js"></script>
+		<script src="./js/lottery.js"></script>
+		<script src="./js/API.js?v=2"></script>
+		<script>
+			ibase.load('js/index.js');
+		</script>
+	</body>
+
+</html>

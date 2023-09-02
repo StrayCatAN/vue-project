@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width,target-densitydpi=device-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Document</title>
+    <style>
+        html{
+            overflow: hidden;
+
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            width: 10.8rem;
+            background-image: url('./images/envelope/bj.png');
+            /* background-color: red; */
+            /* background-position: center center; */
+            background-repeat: no-repeat; 
+            background-size: cover;
+        }
+        .yun{
+            position: fixed;
+            width: 12.42rem;
+            height: 7.38rem;
+            bottom: 0;
+            background-image: url('./images/envelope/yun.png');
+            /* background-color: red; */
+            /* background-position: center center; */
+            background-repeat: no-repeat; 
+            background-size: cover;
+        }
+        #cover_render{
+            transform-origin: 11px 11px;
+            position: absolute;
+            z-index: 110;
+            width: 100%;
+            height: 100%;
+            /* transform: rotateX(180deg); */
+            background: url('./images/envelope/gaizi.png');
+            /* background-image: url('./images/envelope/gaizi-inside.png'); */
+            /* background-color: red; */
+            /* background-position: center center; */
+            background-repeat: no-repeat; 
+            background-size: cover;
+            /* animation: rotate-cover 2s infinite linear; */
+            /* transform: rotateX(180deg); */
+        }
+
+        .front_render{
+            position: absolute;
+            z-index: 80;
+            width: 100%;
+            height: 100%;
+            background-image: url('./images/envelope/qian.png');
+            /* background-color: red; */
+            /* background-position: center center; */
+            background-repeat: no-repeat; 
+            background-size: cover;
+        }
+        .backend_render{
+            /* overflow: hidden; */
+            position: absolute;
+            z-index: 60;
+            width: 100%;
+            height: 100%;
+            background-image: url('./images/envelope/nei.png');
+            /* background-color: red; */
+            /* background-position: center center; */
+            background-repeat: no-repeat; 
+            background-size: cover;
+            /* overflow: hidden; */
+        }
+        .envelope{
+            width: 10.15rem;
+            height: 7.9rem;
+            z-index: 999;
+        }
+        #context{
+            position: relative;
+            width: 10rem;
+            height: 20.34rem;
+            z-index: 100;
+            right: -0.35rem;
+            top: 0;
+            transform: translateY(-50%);
+            background: url('./images/envelope/xinzhi.png');
+            background-repeat: no-repeat; 
+            background-size: contain;
+            text-align: center;
+            padding-top: 1.7rem;
+            opacity: 0;
+        }
+        #cover{
+            position: absolute;
+            top: 30%;
+            left: 45%;
+            transform: translate(-45%, -30%);
+            /* display: inline-block; */
+        }
+        .line{
+            position: absolute;
+            top: 30%;
+            width: 12.42rem;
+            height: 6.73rem;
+            background-image: url('./images/envelope/guang.png');
+            /* background-color: red; */
+            /* background-position: center center; */
+            background-repeat: no-repeat; 
+            background-size: cover;
+        }
+        .fadout{
+            animation: envelope_up 2s;
+            -webkit-animation:rotate-fail 5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        .shake{
+            animation: shake 2s infinite linear;
+        }
+        .fail{
+            animation: rotate-fail 2s ; 
+            -webkit-animation:rotate-fail 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        .open{
+            animation-delay: 10s;
+            animation: rotate-cover 5s;
+            -webkit-animation:rotate-cover 5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            transition: all 1s;
+        }
+        @keyframes rotate-cover {
+                100%{
+                    top: 0.1rem;
+                    transform: rotateX(-180deg);
+                    background: url('./images/envelope/gaizi-inside.png');
+                    background-repeat: no-repeat; 
+                    background-size: cover;
+                    opacity: 1;
+                    z-index: 1;
+
+                }
+            }
+        @keyframes rotate-fail {
+            from {
+                top: 30%;
+            }
+            to{
+                top: 60%;
+                transform: translateX(-45%) scale(1.2) ;
+            }
+        }
+        @keyframes envelope_up {
+             100%{
+                transform: translateY(70%) scale(1.1);
+             }
+            }
+        @keyframes shake {
+            50% {
+                transform: translateY(20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        h1{
+            font-size: 0.7rem;
+            line-height: 0.68rem;
+        }
+        p{
+            font-size: 0.48rem;
+            line-height: 0.48rem;
+        }
+        span{
+            color: red;
+            font-weight: bold;
+        }
+        #button {
+            width: 4.91rem;
+            height: 1.65rem;
+            position: absolute;
+            top: 2.5rem;
+            left: 2.7rem;
+            z-index: 999;
+            bottom: 0;
+            background: url('./images/launch/btn@3x.png');
+            background-repeat: no-repeat; 
+            background-size: cover;
+            color: #FFFFFF;
+            line-height: 1.65rem;
+            text-align: center;
+            font-size: 0.62rem;
+            opacity: 0;
+            text-decoration: none;
+        }
+    </style>
+        <script type="text/javascript">
+            document.documentElement.style.fontSize = (document.documentElement.clientWidth / 1242) * 100 + 'px'
+        </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="cover" id="btn"></div>
+        <div id="cover" >
+            <div class="envelope shake">
+                <a href="./home.html" id="button">开启新征程</a>
+                <div id="cover_render"></div>
+                <div class="front_render"></div>
+                <div class="backend_render">
+                    <div id="context">
+                        <h1>老伙计 新朋友</h1>
+                        <p> 进阶实力，久别重逢 </p>
+                        <p> 承载初心，欢迎回归 </p>
+                        <p> 80万老伙计情怀依旧 </p>
+                        <p> 新哈弗H5王者归来 </p>
+                        <p> 已有<span>8721</span>哈弗车主参与 </p>
+                        <p> 新哈弗H5王者归来 </p>
+                        <p> 您是第<span>8722</span>名老伙计 </p>
+                        <p> 你好，我的朋友们 </p>
+                        <p> 好久不见，我回来了 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line" id="line"></div>
+        <div class="yun"></div>
+
+    </div>
+    <script src="./js/jquery.js">
+    </script>
+    <script src="./server/fetch.js"></script>
+    <script>
+        init()
+
+        const openBtn = $('#cover_render')
+        const line = $('#line')
+        const envelope = $('#cover')
+        // openBtn.click(openEnvelope)
+        line.click(openEnvelope)
+        function openEnvelope(){
+            $('.envelope').removeClass('shake')
+            $('#cover').addClass('fail')
+            openBtn.addClass('open')
+            $('#line').fadeOut('slow')
+            setTimeout(()=>{
+                $('#context').fadeTo("slow",1)
+                setTimeout(()=>{
+                    $('#button').fadeTo("slow",1)
+                }, 1000)
+            }, 4000)
+        }
+        function init(){
+            API.login()
+        }
+    </script>
+</body>
+</html>

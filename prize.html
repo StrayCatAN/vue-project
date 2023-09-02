@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        document.documentElement.style.fontSize = (document.documentElement.clientWidth / 1242) * 100 + 'px'
+    </script>
+    <style>
+        html{
+            /* overflow: hidden; */
+            /* overflow: scroll; */
+
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            width: 12.42rem;
+            min-height: 22.63rem;
+            background-image: url('./images/rotatePrize/zp_bj.png');
+            background-repeat: no-repeat; 
+            background-size: cover;
+            overflow-x: hidden;
+            background-color: #FDCEAC;
+        }
+        #my-lucky{
+            z-index: 100;
+            position: absolute;
+            top: 1.77rem;
+            left: 45%;
+            transform: translate(-45%);
+        }
+        #diz1{
+            width: 8.52rem;
+            height: 5rem;
+            position: absolute;
+            top: 7.92rem;
+            left: 1.95rem;
+            z-index: 1;
+            background: url('./images/rotatePrize/diz1.png');
+            background-repeat: no-repeat; 
+            background-size: cover;
+        }
+        #taizi{
+            width: 12.42rem;
+            height: 10.87rem;
+            top: 11.76rem;
+            position: absolute;
+            background: url('./images/rotatePrize/taizi.png');
+            background-repeat: no-repeat; 
+            background-size: cover;
+        }
+        #yun{
+            width: 12.42rem;
+            height: 6.66rem;
+            position: relative;
+            bottom: -5.38rem;
+            background: url('./images/rotatePrize/yun.png');
+            background-repeat: no-repeat; 
+            background-size: cover;
+        }
+        #bottomYun{
+            position: relative;
+            bottom: 0px;
+            width: 12.42rem;
+            height: 7.38rem;
+            background: url('./images/envelope/yun.png');
+            background-repeat: no-repeat; 
+            background-size: cover;
+        }
+        h1{
+            width: 100%;
+            position: relative;
+            top: 2rem;
+            z-index: 999;
+            color: #B15D14;
+            font-size: 0.6rem;
+            text-align: center;
+        }
+        #list{
+            position: relative;
+            top: 2.5rem;
+        }
+        p{
+            color: #B15D14;
+            font-size: 0.5rem;
+            text-align: center;  
+        }
+        .button{
+            /* width: 4.91rem;
+            height: 1.65rem; */
+            bottom: 0;
+            background: url('./images/launch/btn@3x.png');
+            background-repeat: no-repeat; 
+            background-size: contain;
+            color: #FFFFFF;
+            line-height: 1.65rem;
+            text-align: center;
+            font-size: 0.62rem;
+            text-decoration: none;
+        }
+        #getPrize{
+            width: 4.91rem;
+            height: 1.65rem;
+        }
+        #BackBtn{
+            width: 4.91rem;
+            height: 1.65rem;
+        }
+        .btn{
+            position: absolute;
+            left: 3rem;
+            bottom: 1rem;
+            width: 4.91rem;
+            height: 1.65rem;
+            font-size: 0.46rem;
+            padding-top: 0.35rem;
+            text-align: center;
+            text-decoration: none;
+            background: url('./images/launch/btn@3x.png');
+            background-repeat: no-repeat; 
+            background-size: contain;
+            color: #FFFFFF;
+            /* z-index: 9999; */
+        }
+        .buttonList{
+            position: absolute;
+            bottom: 1rem;
+            z-index: 9999;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+        .footer{
+            position: fixed;
+            bottom: 0;
+        }
+        #dialog{
+            /* display: none; */
+            position: absolute;
+            z-index: 999;
+            display: none;
+        }
+        #dialog2{
+            position: absolute;
+            z-index: 999;
+            display: none;
+        }
+        #dialog3{
+            position: absolute;
+            z-index: 999;
+            display: none;
+        }
+        .modal{
+            position: fixed;
+            top: 0px;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            opacity: 0.5;
+
+        }
+        .content1{
+            top: 6.34rem;
+            position: fixed;
+            background: url('./images/rotatePrize/tanchuang@2x.png');
+            background-repeat: no-repeat; 
+            background-size: contain;
+            /* top: 50%; */
+            margin-left: 0.79rem;
+            margin-right: 0.79rem;
+            /* transform: translate(-50%, -50%); */
+            width: 10.79rem;
+            height: 10.72rem; 
+        }
+        .content2{
+            top: 6.34rem;
+            position: fixed;
+            background: url('./images/rotatePrize/thanks@2x.png');
+            background-repeat: no-repeat; 
+            background-size: contain;
+            /* top: 50%; */
+            margin-left: 0.79rem;
+            margin-right: 0.79rem;
+            /* transform: translate(-50%, -50%); */
+            width: 10.79rem;
+            height: 10.72rem; 
+        }
+        .close{
+            position: absolute;
+            right: 1rem;
+            top: -0.6rem;
+            background: url('./images/rotatePrize/close@2x.png');
+            background-repeat: no-repeat; 
+            background-size: contain;
+            width: 2.17rem;
+            height: 2.17rem;
+        }
+        .dialog_title{
+            width: 100%;
+            text-align: center;
+            margin-top: 0.6rem;
+            font-size: 0.70rem;
+        }
+        ::-webkit-scrollbar {
+            background-color: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: transparent;
+        }
+        .dialog-list{
+            /* width: 5rem; */
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+            overflow-y: scroll;
+            height: 2.96rem;
+            color: #FF4D0C
+            /* margin-left: 1.8rem;
+            margin-right: 2rem; */
+            /* background-color: pink; */
+        }
+        .line{
+            width: 100%;
+            border-bottom: 0.02rem solid #D3231B;
+        }
+        .listItem{
+
+            height: 0.96rem;
+            color: #D3231B;
+            font-size: 0.16rem;
+            line-height: 0.96rem;
+
+            text-align: center;
+            /* border-bottom: 0.02rem solid #D3231B; */
+            padding-right: 1rem;
+            margin-left: 1.8rem;
+            margin-right: 1.5rem;
+        }
+        .listItem:nth-child(even){
+            background-color: #F7D0B9;
+        }
+        .list-title{
+            margin-left: 1.8rem;
+            margin-right: 2rem;
+            margin-top: 2.3rem;
+            font-size: 0.28rem;
+            color: #D3231B;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 0.02rem solid #D3231B
+            /* margin-bottom: 0.8rem; */
+        }
+        .loading .proline{background-image: url(../images/proline.png);width: 4.94rem;height: .26rem;margin: .35rem auto .2rem}
+        .loading .proline .pro{height:.22rem;position: absolute;background: #ffbb55;border-radius: .22rem;margin-top: .02rem;left: .02rem;transition: width .3s linear;}
+        .loading .proline .pro::after{content: '';background-image: url(../images/loadingEle3.png);width: .33rem;height: .34rem;position: absolute;right: -.04rem;top:-.06rem;background-size: cover;}
+        .loading .num{color: #fff;font-size: 0.3rem;text-align: center;;}
+        .loading .num i{font-size: 0.3rem;}
+        section{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- <section> -->
+        <div id="my-lucky"></div>
+        <div id="diz1"></div>
+        <div id="taizi">
+            <h1>中奖记录</h1>
+            <div id="list">
+                <p>xxx用户 抽中100积分</p>
+                <p>xxx用户 抽中100积分</p>
+                <p>xxx用户 抽中100积分</p>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="buttonList">
+                <a href="./home.html" id="BackBtn" class="button">返回首页</a>
+                <div id="getPrize" class="button">中奖纪录</div>
+            </div>
+            <div id="yun"></div>
+            <div id="bottomYun"></div>
+        </div>
+        <div id="dialog">
+            <div class="modal"></div>
+            <div class="content1">
+                <div class="close"></div>
+                <div class="list-title"><span>中奖时间</span> <span>奖品</span> <span>状态</span></div>
+                <div class="dialog-list">
+                    <div class="listItem">2023/1/312:53      100积分       未发放</div>
+                    <div class="listItem">2023/1/312:53      100积分       未发放</div>
+                    <div class="listItem">2023/1/312:53      100积分       未发放</div>
+                    <div class="listItem">2023/1/312:53      100积分       未发放</div>
+                    <div class="listItem">2023/1/312:53      100积分       未发放</div>
+                </div>
+                <a href="./home.html" class="btn">返回首页</a>
+            </div>
+            <div class="line"></div>
+    
+        </div>
+        <div id="dialog2">
+            <div class="modal"></div>
+            <div class="content2">
+                <div class="close"></div>
+                <div class="dialog_title">恭喜您获得</div>
+                <a href="./home.html" class="btn">返回首页</a>
+            </div>
+        </div>
+        <div id="dialog3">
+            <div class="modal"></div>
+            <div class="content2">
+                <div class="close"></div>
+                <a href="./home.html" class="btn">返回首页</a>
+            </div>
+        </div>
+    <!-- </section> -->
+    <!-- <section class="loading opacity0 opacity1">
+        <div class="contv">
+            <div class="proline">
+                <div class="pro" ></div>
+            </div>
+            <div class="num"><i>0%</i>......</div>
+        </div>
+    </section> -->
+    <script src="https://unpkg.com/lucky-canvas@1.7.25"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+        $('#getPrize').click(function(){
+            console.log(1)
+            $('#dialog').css('cssText', 'display: block')
+        })
+        $('.modal').click(closeFun)
+        $('.close').click(closeFun)
+        function closeFun(){
+            $('#dialog').css('cssText', 'display: none')
+            $('#dialog2').css('cssText', 'display: none')
+            $('#dialog3').css('cssText', 'display: none')
+        }
+        const myLucky = new LuckyCanvas.LuckyWheel('#my-lucky', {
+            width: '11rem',
+            height: '11rem',
+            blocks: [{
+                // padding: '20px',
+                imgs: [
+                    
+                    {
+                        src: './images/rotatePrize/zp_pan.png',
+                        width: '100%',
+                        // height: '100%',
+                        rotate: true
+                    }
+                ]
+            }],
+            prizes: [
+            {
+                fonts: [
+                { text: '奖品一', top: '45%', fontSize: '0.48rem' },
+                ],
+            },
+            {
+                fonts: [
+                { text: '明天再来', top: '45%', fontSize: '0.48rem', fontColor: '#aaa' },
+                ]
+            },
+            {
+                fonts: [
+                { text: '奖品二', top: '45%', fontSize: '0.48rem', fontColor: 'red', fontWeight: '700' },
+                ]
+            },
+            {
+                fonts: [
+                { text: '奖品三', top: '45%', fontSize: '0.48rem', fontColor: '#aaa' },
+                ]
+            },
+            {
+                fonts: [
+                { text: '奖品四', top: '45%', fontSize: '0.48rem' },
+                ],
+            },
+            {
+                fonts: [
+                { text: '奖品五', top: '45%', fontSize: '0.48rem', fontColor: '#aaa' },
+                ]
+            },
+            ],
+            buttons: [
+            {
+                range: [0, 0, 0, 0, 100],
+                radius: '45%',
+                imgs: [{
+                src: './images/rotatePrize/zp_zz.png',
+                width: '100%',
+                top: '-120%',
+                left: '5'
+                }]
+            }
+            ],
+            defaultConfig: {
+            speed:16
+            },
+            start: function () {
+            // 开始游戏
+            myLucky.play()
+            // 使用定时器模拟接口
+            setTimeout(() => {
+                // 结束游戏
+                myLucky.stop(0)
+            }, 3000)
+            },
+            end: function (e) {
+                console.log(e)
+            // 开始游戏
+            //   myLucky.play()
+            // 使用定时器模拟接口
+            setTimeout(() => {
+                // 结束游戏
+                // myLucky.stop(0)
+            }, 3000)
+            },
+
+        })
+    })
+    </script>
+</body>
+</html>
